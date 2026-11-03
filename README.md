@@ -29,7 +29,7 @@ Paste the lines that show the image change, and the `Plan:` line.
 ```
 
 ## Part 3: plan that found the drift after `kubectl scale`
-
+image                      = "shripada/hello-app:v1" -> "shripada/hello-app:v2"
 ```
 
 ```
