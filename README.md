@@ -35,7 +35,7 @@ image                      = "shripada/hello-app:v1" -> "shripada/hello-app:v2"
 ```
 
 ## Part 4: `kubectl get svc -A` showing dev and prod
-
+replicas                  = "5" -> "3"
 ```
 
 ```

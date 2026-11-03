@@ -27,9 +27,20 @@ variable "port" {
   default = 8080
 }
 
+variable "namespace" {
+  type = string
+}
+
+resource "kubernetes_namespace_v1" "env" {
+  metadata {
+    name = var.namespace
+  }
+}
+
 resource "kubernetes_deployment_v1" "hello" {
   metadata {
-    name = "hello-app"
+    name      = "hello-app"
+    namespace = kubernetes_namespace_v1.env.metadata[0].name
   }
 
   spec {
@@ -64,7 +75,8 @@ resource "kubernetes_deployment_v1" "hello" {
 
 resource "kubernetes_service_v1" "hello" {
   metadata {
-    name = "hello-app"
+    name      = "hello-app"
+    namespace = kubernetes_namespace_v1.env.metadata[0].name
   }
 
   spec {
@@ -80,6 +92,8 @@ resource "kubernetes_service_v1" "hello" {
     }
   }
 }
+
+
 
 output "url" {
   value = "http://localhost:${var.port}"
