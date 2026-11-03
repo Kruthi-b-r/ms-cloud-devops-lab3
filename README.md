@@ -41,7 +41,7 @@ replicas                  = "5" -> "3"
 ```
 
 ## Break it: the error after deleting `terraform.tfstate`
-
+namespaces "dev" already exists
 ```
 
 ```
@@ -49,6 +49,9 @@ replicas                  = "5" -> "3"
 ## Break it: the wrong selector
 
 What did you see, and how did you find the cause? One or two sentences.
+"app" = "hello-app" -> "helo-app"
+
+Terraform has compared your real infrastructure against your configuration and found no differences, so no changes are needed.
 
 
 
