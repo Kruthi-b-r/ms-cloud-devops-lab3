@@ -1,8 +1,8 @@
 # Lab 3 — hello-app on Kubernetes with Terraform
 
-Name:
+Name:Kruthi B R
 
-Roll number:
+Roll number:261100680012
 
 ## Part 1: first `terraform plan`
 
